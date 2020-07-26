@@ -24,9 +24,9 @@ It's then as simple as running ```main.py``` .
 ___
 ## Coming Soon!
 We're planning on adding the following;
-    - More support to add this to your own Discord server with proper config files
-    - More wacky and uncharacteristic features
-    - Low-fi radio in voice chats
+    * More support to add this to your own Discord server with proper config files
+    * More wacky and uncharacteristic features
+    * Low-fi radio in voice chats
     
 ___
 ## Licence
