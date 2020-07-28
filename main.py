@@ -1,4 +1,9 @@
+    
+
 # Imports
+import requests
+import json
+
 import discord
 from discord.ext import commands
 from discord.utils import get
@@ -16,6 +21,9 @@ stalin_channel_id = 734601735783317571
 
 # Commie Girls Channel ID
 commie_channel_id = 734601772450054196
+
+# Aminal Channel ID
+animal_channel_id = 737564889006211073
 
 @bot.event
 async def on_ready():
@@ -56,12 +64,85 @@ async def commie(ctx):
     await ctx.author.add_roles(role)
     await ctx.send(f"{ctx.author} now serves the motherland!")
 
+# Sends random doggo photo UwU
+@bot.command(name = "doggo", help = "Sends photo of a dog")
+async def doggo(ctx):
+    if ctx.channel.id == animal_channel_id:
+        doggoresponse = requests.get("https://dog.ceo/api/breeds/image/random")
+        dogpic = doggoresponse.json()
+        await ctx.send(dogpic['message'])
+
+# Sends random doggo fact UwU
+@bot.command(name = "doggofact", help = "Sends fact of a dog")
+async def doggofact(ctx):
+    if ctx.channel.id == animal_channel_id:
+        doggofactresponse = requests.get("https://some-random-api.ml/facts/dog")
+        doggofact = doggofactresponse.json()
+        dogfact = doggofact['fact']
+
+        doggofact_embed = discord.Embed(
+            title = f"Here's a random dog fact...",
+            description = f"Did you know, {dogfact}",
+            color = discord.Color.blue()
+        )
+
+        doggofact_embed.set_footer(
+            text = "Doggo Fact",
+            icon_url = "https://i.ibb.co/qxPpsT7/doggo.webp"
+        )
+
+        await ctx.send(embed = doggofact_embed)
+        
+
+# Sends random fox photo UwU
+@bot.command(name = "fox", help = "Sends photo of a fox")
+async def fox(ctx):
+    if ctx.channel.id == animal_channel_id:
+        foxresponse = requests.get("https://randomfox.ca/floof/")
+        foxpic = foxresponse.json()
+        await ctx.send(foxpic['image'])
+
+# Sends random fox fact UwU
+@bot.command(name = "foxfact", help = "Sends fact of a fox")
+async def fox(ctx):
+    if ctx.channel.id == animal_channel_id:
+        foxfactresponse = requests.get("https://some-random-api.ml/facts/fox")
+        foxfact = foxfactresponse.json()
+        ffact = foxfact['fact']
+
+        foxfact_embed = discord.Embed(
+            title = f"Here's a random fox fact...",
+            description = f"Did you know, {ffact}",
+            color = discord.Color.blue()
+        )
+
+        foxfact_embed.set_footer(
+            text = "Fox Fact",
+            icon_url = "https://i.ibb.co/sFG4GsS/fox.jpg"
+        )
+
+        await ctx.send(embed = foxfact_embed)
+
 # Scans message for instance of word and responds
-# I would 
+# There are probably more organised ways to do this, however using the or command breaks it, same thing goes for putting separate @bot.event, on_message.
 @bot.event
 async def on_message(message):
+    if message.author.id == bot.user.id:
+        return
     # Responds with 5 different pog emotes to the mention of the word pog
-    if 'pog' in message.content:
+    if 'pog' in message.content.split():
+        await message.add_reaction("<:Pogey:729196572973465631>")
+        await message.add_reaction("<:POGGERS:729196573178855494>")
+        await message.add_reaction("<:PogU:729196572843311145>")
+        await message.add_reaction("<:PogUU:729196571979284510>")
+        await message.add_reaction("<:PeepoPog:729196572876996699>")
+    elif 'Pog' in message.content.split():
+        await message.add_reaction("<:Pogey:729196572973465631>")
+        await message.add_reaction("<:POGGERS:729196573178855494>")
+        await message.add_reaction("<:PogU:729196572843311145>")
+        await message.add_reaction("<:PogUU:729196571979284510>")
+        await message.add_reaction("<:PeepoPog:729196572876996699>")
+    elif 'POG' in message.content.split():
         await message.add_reaction("<:Pogey:729196572973465631>")
         await message.add_reaction("<:POGGERS:729196573178855494>")
         await message.add_reaction("<:PogU:729196572843311145>")
@@ -69,23 +150,36 @@ async def on_message(message):
         await message.add_reaction("<:PeepoPog:729196572876996699>")
 
     # Anti Capitalism Commands, corrects people using "my", ect.    
-    if 'my' in message.content:
+    if 'my' in message.content.split():
         await message.channel.send(f"__**OUR**__")
-    elif 'mine' in message.content:
+    elif 'My' in message.content.split():
         await message.channel.send(f"__**OUR**__")
-    elif 'private property' in message.content:
+    elif 'MY' in message.content.split():
+        await message.channel.send(f"__**OUR**__")
+    elif 'mine' in message.content.split():
+        await message.channel.send(f"__**OUR**__")
+    elif 'Mine' in message.content.split():
+        await message.channel.send(f"__**OUR**__")
+    elif 'MINE' in message.content.split():
+        await message.channel.send(f"__**OUR**__")
+    elif 'private property' in message.content.split():
         await message.channel.send(f"Private property is a myth, shut up chud.")
     
     # Communism Commands, congratulates people on usage of communist terms
-    if 'our' in message.content:
+    if 'our' in message.content.split():
         await message.add_reaction("<:ussr:735408416280936448>")
-    elif 'us' in message.content:
+    elif 'us' in message.content.split():
         await message.add_reaction("<:ussr:735408416280936448>")
-    elif 'we' in message.content:
+    elif 'we' in message.content.split():
         await message.add_reaction("<:ussr:735408416280936448>")
- 
+
+    # Finds Images in CommieGirls
+    #if message.channel.id == commie_channel_id:
+        #if message.attachments:
+            #if attachment.width > 0:
+                #await message.channel.send(f"COMMUNIST TITTIES FOR THE MOTHERLAND, POGGERS <:ussr:735408416280936448>")
     
     await bot.process_commands(message) # this is needed because message.content is a greedy bitch
 
 # Run bot, make sure to change the Token
-bot.run("TOKEN", bot=True, reconnect=True)
+bot.run("NzM0NjUxMDI0MjcwNDI2MTc0.XxUzFQ.e3AE-XWCmBDxMcU2kGJeyvedwmo", bot=True, reconnect=True)
