@@ -1,7 +1,6 @@
 # Imports
 import requests
 import json
-
 import discord
 from discord.ext import commands
 from discord.utils import get
@@ -13,13 +12,10 @@ bot = commands.Bot(command_prefix="!", description="Commie Bot", case_insensitiv
 
 # Lennin Posting Channel ID
 lennin_channel_id = 734601701666979942
-
 # Stalin Hate Group Channel ID
 stalin_channel_id = 734601735783317571
-
 # Commie Girls Channel ID
 commie_channel_id = 734601772450054196
-
 # Aminal Channel ID
 animal_channel_id = 737564889006211073
 
@@ -181,3 +177,4 @@ async def on_message(message):
 
 # Run bot, make sure to change the Token
 bot.run("TOKEN", bot=True, reconnect=True)
+
