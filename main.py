@@ -182,4 +182,4 @@ async def on_message(message):
     await bot.process_commands(message) # this is needed because message.content is a greedy bitch
 
 # Run bot, make sure to change the Token
-bot.run("NzM0NjUxMDI0MjcwNDI2MTc0.XxUzFQ.e3AE-XWCmBDxMcU2kGJeyvedwmo", bot=True, reconnect=True)
+bot.run("TOKEN", bot=True, reconnect=True)
