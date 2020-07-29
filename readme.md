@@ -1,5 +1,5 @@
 # Lennin Bot
-Please not that this bot doesn't support nor condone Vladmir Lennin. However this is just a meme bot for a discord server.
+Please note that this bot doesn't support nor condone Vladmir Lennin. However this is just a meme bot for a discord server.
 
 #### What is special about this bot?
 Nothing. Absolutely nothing, this was just so I could learn discord.py. However it is kind of cool.
