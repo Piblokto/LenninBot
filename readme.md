@@ -18,6 +18,13 @@ This can be installed on Windows through CMD with
 
 It can be installed on Linux with
 ```pip3 install discord```
+And, last but not least, you will need [requests](https://pypi.org/project/requests/) intalled...
+
+Again, this can be installed on Windows through CMD with
+``` pip install requests```
+
+and on Linux with
+```pip3 install requests```
 
 You then want to add your own bot token/bot to the code (down the botton)
 It's then as simple as running ```main.py``` .
