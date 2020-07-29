@@ -142,6 +142,66 @@ async def on_message(message):
         await message.add_reaction("<:PogU:729196572843311145>")
         await message.add_reaction("<:PogUU:729196571979284510>")
         await message.add_reaction("<:PeepoPog:729196572876996699>")
+    elif 'poggers' in message.content.split():
+        await message.add_reaction("<:Pogey:729196572973465631>")
+        await message.add_reaction("<:POGGERS:729196573178855494>")
+        await message.add_reaction("<:PogU:729196572843311145>")
+        await message.add_reaction("<:PogUU:729196571979284510>")
+        await message.add_reaction("<:PeepoPog:729196572876996699>")
+    elif 'Poggers' in message.content.split():
+        await message.add_reaction("<:Pogey:729196572973465631>")
+        await message.add_reaction("<:POGGERS:729196573178855494>")
+        await message.add_reaction("<:PogU:729196572843311145>")
+        await message.add_reaction("<:PogUU:729196571979284510>")
+        await message.add_reaction("<:PeepoPog:729196572876996699>")  
+    elif 'POGGERS' in message.content.split():
+        await message.add_reaction("<:Pogey:729196572973465631>")
+        await message.add_reaction("<:POGGERS:729196573178855494>")
+        await message.add_reaction("<:PogU:729196572843311145>")
+        await message.add_reaction("<:PogUU:729196571979284510>")
+        await message.add_reaction("<:PeepoPog:729196572876996699>")  
+    elif 'pogey' in message.content.split():
+        await message.add_reaction("<:Pogey:729196572973465631>")
+        await message.add_reaction("<:POGGERS:729196573178855494>")
+        await message.add_reaction("<:PogU:729196572843311145>")
+        await message.add_reaction("<:PogUU:729196571979284510>")
+        await message.add_reaction("<:PeepoPog:729196572876996699>")
+    elif 'Pogey' in message.content.split():
+        await message.add_reaction("<:Pogey:729196572973465631>")
+        await message.add_reaction("<:POGGERS:729196573178855494>")
+        await message.add_reaction("<:PogU:729196572843311145>")
+        await message.add_reaction("<:PogUU:729196571979284510>")
+        await message.add_reaction("<:PeepoPog:729196572876996699>")
+    elif 'POGEY' in message.content.split():
+        await message.add_reaction("<:Pogey:729196572973465631>")
+        await message.add_reaction("<:POGGERS:729196573178855494>")
+        await message.add_reaction("<:PogU:729196572843311145>")
+        await message.add_reaction("<:PogUU:729196571979284510>")
+        await message.add_reaction("<:PeepoPog:729196572876996699>")
+    elif 'pogchamp' in message.content.split():
+        await message.add_reaction("<:Pogey:729196572973465631>")
+        await message.add_reaction("<:POGGERS:729196573178855494>")
+        await message.add_reaction("<:PogU:729196572843311145>")
+        await message.add_reaction("<:PogUU:729196571979284510>")
+        await message.add_reaction("<:PeepoPog:729196572876996699>")  
+    elif 'Pogchamp' in message.content.split():
+        await message.add_reaction("<:Pogey:729196572973465631>")
+        await message.add_reaction("<:POGGERS:729196573178855494>")
+        await message.add_reaction("<:PogU:729196572843311145>")
+        await message.add_reaction("<:PogUU:729196571979284510>")
+        await message.add_reaction("<:PeepoPog:729196572876996699>")
+    elif 'PogChamp' in message.content.split():
+        await message.add_reaction("<:Pogey:729196572973465631>")
+        await message.add_reaction("<:POGGERS:729196573178855494>")
+        await message.add_reaction("<:PogU:729196572843311145>")
+        await message.add_reaction("<:PogUU:729196571979284510>")
+        await message.add_reaction("<:PeepoPog:729196572876996699>")
+    elif 'POGCHAMP' in message.content.split():
+        await message.add_reaction("<:Pogey:729196572973465631>")
+        await message.add_reaction("<:POGGERS:729196573178855494>")
+        await message.add_reaction("<:PogU:729196572843311145>")
+        await message.add_reaction("<:PogUU:729196571979284510>")
+        await message.add_reaction("<:PeepoPog:729196572876996699>")
 
     # Anti Capitalism Commands, corrects people using "my", ect.    
     if 'my' in message.content.split():
@@ -158,7 +218,15 @@ async def on_message(message):
         await message.channel.send(f"__**OUR**__")
     elif 'private property' in message.content.split():
         await message.channel.send(f"Private property is a myth, shut up chud.")
-    
+
+    # Anti Stalin commands, becaue fuck stalin
+    if 'stalin' in message.content.split():
+        await message.channel.send(f"***Ewww STALIN***")
+    elif 'Stalin' in message.content.split():
+        await message.channel.send(f"***Ewww STALIN***")
+    elif 'STALIN' in message.content.split():
+        await message.channel.send(f"***Ewww STALIN***")
+
     # Communism Commands, congratulates people on usage of communist terms
     if 'our' in message.content.split():
         await message.add_reaction("<:ussr:735408416280936448>")
@@ -167,14 +235,7 @@ async def on_message(message):
     elif 'we' in message.content.split():
         await message.add_reaction("<:ussr:735408416280936448>")
 
-    # Finds Images in CommieGirls
-    #if message.channel.id == commie_channel_id:
-        #if message.attachments:
-            #if attachment.width > 0:
-                #await message.channel.send(f"COMMUNIST TITTIES FOR THE MOTHERLAND, POGGERS <:ussr:735408416280936448>")
-    
     await bot.process_commands(message) # this is needed because message.content is a greedy bitch
 
 # Run bot, make sure to change the Token
 bot.run("TOKEN", bot=True, reconnect=True)
-
