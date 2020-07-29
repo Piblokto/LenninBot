@@ -18,6 +18,7 @@ This can be installed on Windows through CMD with
 
 It can be installed on Linux with
 ```pip3 install discord```
+
 And, last but not least, you will need [requests](https://pypi.org/project/requests/) intalled...
 
 Again, this can be installed on Windows through CMD with
