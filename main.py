@@ -116,6 +116,36 @@ async def fox(ctx):
         )
 
         await ctx.send(embed = foxfact_embed)
+        
+# Sends random cat photo meowwwwwwww
+@bot.command(name = "cat", help = "Sends photo of a cat")
+async def cat(ctx):
+    if ctx.channel.id == animal_channel_id:
+        url = "https://api.thecatapi.com/v1/images/search"
+        headers = {'x-api-key': 'INSERT THE CAT API KEY HERE'}
+        response = requests.request("GET", url, headers=headers).json()
+        await ctx.send(response[0]["url"])
+
+# Sends random cat fact meowwwwwwwww
+@bot.command(name = "catfact", help = "Sends fact of a cat")
+async def catfact(ctx):
+    if ctx.channel.id == animal_channel_id:
+        catfactresponse = requests.get("https://some-random-api.ml/facts/cat")
+        catfact = catfactresponse.json()
+        cfact = catfact["fact"]
+
+        catfact_embed = discord.Embed(
+            title = f"Here's a random cat fact...",
+            description = f"Did you know, {cfact}",
+            color = discord.Color.blue()
+        )
+
+        catfact_embed.set_footer(
+            text = "Cat Fact",
+            icon_url = "https://cdn2.thecatapi.com/images/2gj.jpg"
+        )
+
+        await ctx.send(embed = catfact_embed)
 
 # Scans message for instance of word and responds
 # There are probably more organised ways to do this, however using the or command breaks it, same thing goes for putting separate @bot.event, on_message.
