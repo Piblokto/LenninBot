@@ -5,41 +5,32 @@ Please note that this bot doesn't support nor condone Vladmir Lennin. However th
 Nothing. Absolutely nothing, this was just so I could learn discord.py. However it is kind of cool.
 
 ##### Pull Requests and Issues
-If you have a suggestion of a feature to add to the bot. Feel free to email me at pib1okt0@protonmail.com.
+If you have a suggestion of a feature to add to the bot, please submit an issue.
 Otherwise if there is an issue with the code/bot, feel free to submit an issue, or a pull request.
 ____
 
-#### Setup
-Firstly, you will need an [installation of Python](https://www.python.org/).
-You will also need to make sure you have [discord.py](https://pypi.org/project/discord.py/) installed
+##### Setup
+Installation is simple.
 
-This can be installed on Windows through CMD with
-``` pip install discord```
+The only requirement is [Python 3](https://www.python.org/downloads/) and [Discord.py](https://pypi.org/project/discord.py/).
 
-It can be installed on Linux with
-```pip3 install discord```
+You can then edit the config file (config.ini) using your text editor of your choice. Make sure to put your [bot token](https://www.writebots.com/discord-bot-token/), and if you wish; your own prefix (by default it will use !)
 
-And, last but not least, you will need [requests](https://pypi.org/project/requests/) intalled...
+In the current version, there is only one requirement to run the bot, however for futureproofing, and other reasons, you're best off installing from the requirements.txt.
+Requirements can be installed through 
+```sh
+pip install -r requirements.txt
+```
 
-Again, this can be installed on Windows through CMD with
-``` pip install requests```
-
-and on Linux with
-```pip3 install requests```
-
-You then want to add your own bot token/bot to the code (down the botton)
-It's then as simple as running ```main.py``` .
-___
-## Coming Soon!
-We're planning on adding the following;
-
-    * More support to add this to your own Discord server with proper config files
-    * More wacky and uncharacteristic features
-    * Low-fi radio in voice chats
-    
+After that it's just a matter of running main.py
+```sh
+python3 main.py
+```
 ___
 ## Licence
 This project is issued under an [MIT License](https://github.com/Piblokto/LenninBot/blob/master/LICENSE.txt).
 
 ___
+
+
 
