@@ -9,7 +9,7 @@ If you have a suggestion of a feature to add to the bot, please submit an issue.
 Otherwise if there is an issue with the code/bot, feel free to submit an issue, or a pull request.
 ____
 
-##### Setup
+### Setup
 Installation is simple.
 
 The only requirement is [Python 3](https://www.python.org/downloads/) and [Discord.py](https://pypi.org/project/discord.py/).
