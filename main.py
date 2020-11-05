@@ -25,7 +25,8 @@ async def on_ready():
     print(f"Logged in as {bot.user} and connected to Discord! (ID: {bot.user.id})")
 
     # Show Status
-    game = discord.Game(name= "Playing with Ryan\'s sexuality")
+    status = config.get("Bot_Data", "Bot_Status")
+    game = discord.Game(name= status)
     await bot.change_presence(activity = game)
 
 @bot.command(name = "sourcecode", aliases = ["source", "code", "opensource"], help = "Responds with source code of bot")
